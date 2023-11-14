@@ -2,6 +2,8 @@ package com.example.tp_final_sauce_algerienne_proj_2;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,38 +37,44 @@ public class LoginActivity extends AppCompatActivity {
     private Button signupButton;
     private Button loginButton;
     private Button validateButton;
-    private boolean isSignUpActive;
+    private boolean isLoginActive;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
+
+
         // Initialize UI components
         emailEditText = (EditText) findViewById(R.id.emailEditText);
         passwordEditText = (EditText) findViewById(R.id.passwordEditText);
         nameEditText = (EditText) findViewById(R.id.nameEditText);
         signupButton = (Button) findViewById(R.id.signupButton);
-        loginButton = (Button) findViewById(R.id.loginButton);
         validateButton = (Button) findViewById(R.id.validateButton);
 
         //UserService
         userService = APIUtils.getUserService();
 
-        loginButton.setEnabled(false);
-        signupButton.setEnabled(true);
-
-        // Set up button click listeners
-        loginButton.setOnClickListener(view -> {
-            loginUI();
-        });
-
         signupButton.setOnClickListener(view -> {
-            signupUI();
+            if (!isLoginActive) {
+                signupUI();
+            } else {
+                loginUI();
+            }
         });
 
         validateButton.setOnClickListener(view -> {
-            if (isSignUpActive) {
+            if (!isLoginActive) {
                 attemptSignUp();
             } else {
                 attemptLogin();
@@ -75,20 +83,17 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginUI() {
-        isSignUpActive = false;
-        loginButton.setEnabled(false);
-        signupButton.setEnabled(true);
+        isLoginActive = !isLoginActive;
+        signupButton.setText("Don't have an account? Create one");
         nameEditText.setVisibility(View.GONE); // Hide the name field
-        validateButton.setEnabled(true);
-        validateButton.setText("Validate Login"); // Set text to 'Login' for the validate button
+        validateButton.setText("Log in"); // Set text to 'Login' for the validate button
     }
 
     private void signupUI() {
-        isSignUpActive = true;
-        loginButton.setEnabled(true);
-        signupButton.setEnabled(false);
+        isLoginActive = !isLoginActive;
+        signupButton.setText("Already have an account? Log in");
         nameEditText.setVisibility(View.VISIBLE); // Show the name field
-        validateButton.setText("Validate Signup"); // Set text to 'Signup' for the validate button
+        validateButton.setText("Create an account"); // Set text to 'Signup' for the validate button
     }
 
     public static boolean isValidEmail(String email) {

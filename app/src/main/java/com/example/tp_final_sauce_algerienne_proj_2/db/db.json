@@ -29,6 +29,18 @@
       "id": 5,
       "name": "test",
       "password": "$2a$10$3NpQqG5FQL7hcskpHdfMeOcz5z8U9PwIRro/LnuDyZ.P6VQm9TvoK"
+    },
+    {
+      "email": "eray@gmail.com",
+      "id": 6,
+      "name": "Eray",
+      "password": "$2a$10$hDf2/CdmYUhPCyu0heOW3ugegcG11zEEFXO0RRiRuqxUMrLVmug/m"
+    },
+    {
+      "email": "eray@mail.fr",
+      "id": 7,
+      "name": "Eraaaaay",
+      "password": "$2a$10$OP6JZdPF8Rii0mTi/vk6GuhZmzpVcrPt2H0yFxFqV7Ny5Eoqs3ohu"
     }
   ],
   "bills": [

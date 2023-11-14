@@ -2,6 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="buttonColor">#000000</color>
-    <color name="buttonTextColor">#FFFFFF</color>
+    <color name="mainBackground">#FFFFFF</color>
+    <color name="loginBg">#151513</color>
+    <color name="textPrimary">#000000</color> <!-- Black for primary text -->
+    <color name="textSecondary">#555555</color> <!-- Dark grey for secondary text -->
+    <color name="buttonText">#FFFFFF</color> <!-- White for button text -->
+    <color name="buttonColor">#FFC107</color> <!-- Yellow for button background -->
+    <color name="buttonTextColor">#FFC107</color> <!-- Yellow for button background -->
 </resources>
