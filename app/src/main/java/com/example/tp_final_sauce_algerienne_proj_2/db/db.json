@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "hashed_johns_password"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "password": "hashed_janes_password"
+    },
+    {
+      "email": "test@gmail.com",
+      "id": 3,
+      "name": "TestTest",
+      "password": "$2a$10$G3fGr9kjKfQp1wZmJF9TyOYcUUSR9qnXNfZsAjNzMrifmnL9mfaGq"
+    },
+    {
+      "email": "arabe@gmail.com",
+      "id": 4,
+      "name": "Ara",
+      "password": "$2a$10$mexxHhnCaG2NhEhgZEZ8cODmAjrgb.P6NeNjWPHE3SD.BS5v8DnDm"
+    },
+    {
+      "email": "arabet@gmail.com",
+      "id": 5,
+      "name": "test",
+      "password": "$2a$10$3NpQqG5FQL7hcskpHdfMeOcz5z8U9PwIRro/LnuDyZ.P6VQm9TvoK"
+    }
+  ],
+  "bills": [
+    {
+      "id": 1,
+      "userId": 5,
+      "rider": "Joe",
+      "amount": 100,
+      "dueDate": "2023-12-01",
+      "origin": "123 Start Street",
+      "destination": "456 End Avenue",
+      "distance": 12.5
+    },
+    {
+      "id": 2,
+      "userId": 5,
+      "rider": "Mama",
+      "amount": 200,
+      "dueDate": "2023-12-15",
+      "origin": "789 Beginning Blvd",
+      "destination": "1011 Finish Road",
+      "distance": 8.3
+    }
+  ]
+}
