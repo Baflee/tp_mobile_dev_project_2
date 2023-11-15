@@ -11,19 +11,21 @@
         android:id="@+id/mapBackground"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="-325dp"
         android:scaleType="fitCenter"
         android:src="@drawable/map_background"
-        android:layout_marginTop="-325dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/logoImage"
         android:layout_width="115dp"
         android:layout_height="115dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="28dp"
         android:src="@drawable/quickride_logo"
         app:layout_constraintBottom_toTopOf="@+id/commandUberButton"
@@ -32,14 +34,58 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.979" />
+        app:layout_constraintVertical_bias="0.937" />
+
+    <Button
+        android:id="@+id/commandUberButton"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="590dp"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Order a ride"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:iconTint="@color/buttonColor"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="113dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Logout"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:iconTint="@color/buttonColor"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/checkPreviousButton"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/mainBackground"
+        android:text="Check Previous Commands"
+        android:textColor="@color/textSecondary"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commandUberButton" />
 
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="612dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="476dp"
         android:text="[user], ready for a ride?"
         android:textColor="@color/buttonColor"
         android:textSize="19sp"
@@ -51,8 +97,8 @@
         android:id="@+id/dateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="8dp"
         android:text="[Date of today]"
         android:textColor="@color/textSecondary"
         android:textSize="14sp"
@@ -61,34 +107,5 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
-
-    <Button
-        android:id="@+id/commandUberButton"
-        android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="700dp"
-        android:backgroundTint="@color/buttonColor"
-        android:text="Order a ride"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:iconTint="@color/buttonColor"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/checkPreviousButton"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/mainBackground"
-        android:text="Check Previous Commands"
-        android:textColor="@color/textSecondary"
-        android:textSize="18sp"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/commandUberButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

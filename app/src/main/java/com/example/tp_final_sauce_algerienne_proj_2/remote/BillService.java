@@ -16,6 +16,6 @@ public interface BillService {
     Call<List<Bill>> getBills();
 
     @POST("bills/")
-    Call<Bill> createBill(@Body Bill bills);
+    Call<Bill> addBill(@Body Bill bills);
 
 }

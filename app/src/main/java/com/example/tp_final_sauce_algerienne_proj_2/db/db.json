@@ -25,9 +25,9 @@
       "password": "$2a$10$mexxHhnCaG2NhEhgZEZ8cODmAjrgb.P6NeNjWPHE3SD.BS5v8DnDm"
     },
     {
-      "email": "arabet@gmail.com",
+      "email": "estiam@gmail.com",
       "id": 5,
-      "name": "test",
+      "name": "Joseph",
       "password": "$2a$10$3NpQqG5FQL7hcskpHdfMeOcz5z8U9PwIRro/LnuDyZ.P6VQm9TvoK"
     },
     {
@@ -41,6 +41,12 @@
       "id": 7,
       "name": "Eraaaaay",
       "password": "$2a$10$OP6JZdPF8Rii0mTi/vk6GuhZmzpVcrPt2H0yFxFqV7Ny5Eoqs3ohu"
+    },
+    {
+      "email": "arabet@gmail.com",
+      "id": 8,
+      "name": "r",
+      "password": "$2a$10$l17dFLUWIUMyyrfNNYsFce/zhLeUQDNUX0SFkFlAkmGRggQlbNlpC"
     }
   ],
   "bills": [
@@ -48,21 +54,37 @@
       "id": 1,
       "userId": 5,
       "rider": "Joe",
-      "amount": 100,
-      "dueDate": "2023-12-01",
+      "rideAmount": 100,
+      "riderAmount": 25,
+      "duration": 1200,
+      "dueDate": "12-01-2023",
       "origin": "123 Start Street",
       "destination": "456 End Avenue",
-      "distance": 12.5
+      "distance": 12
     },
     {
       "id": 2,
       "userId": 5,
       "rider": "Mama",
-      "amount": 200,
-      "dueDate": "2023-12-15",
+      "rideAmount": 200,
+      "riderAmount": 100,
+      "duration": 1200,
+      "dueDate": "20-02-2023",
       "origin": "789 Beginning Blvd",
       "destination": "1011 Finish Road",
-      "distance": 8.3
+      "distance": 8
+    },
+    {
+      "destination": "31 Av. du Dr Gley, 75020 Paris, France",
+      "distance": 14.2,
+      "dueDate": "15-11-2023 01:18",
+      "duration": 26,
+      "id": 3,
+      "origin": "12 Rue Roger, 75014 Paris, France",
+      "rideAmount": 21.3,
+      "rider": "Morgan",
+      "riderAmount": 13,
+      "userId": 5
     }
   ]
 }

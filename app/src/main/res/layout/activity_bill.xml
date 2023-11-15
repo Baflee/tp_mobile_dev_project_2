@@ -17,10 +17,24 @@
             android:textAppearance="?attr/textAppearanceListItem" />
 
         <TextView
-            android:id="@+id/txtBillAmount"
+            android:id="@+id/txtBillRideAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Amount: $100"
+            android:text="Ride Fee: $100"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/txtBillRiderAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Service Fee: $20"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/txtBillDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duration: 30 minutes"
             android:textAppearance="?attr/textAppearanceListItem" />
 
         <TextView

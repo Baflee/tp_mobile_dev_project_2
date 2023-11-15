@@ -45,12 +45,10 @@ public class BillsHistoricActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     list = response.body();
                     SharedPreferences sharedPreferences = getSharedPreferences("userSaved", MODE_PRIVATE);
-                    int savedUserId = sharedPreferences.getInt("id", -1); // Replace with your key and default value
-                    Log.e("Bill test : ", String.valueOf(savedUserId));
+                    int savedUserId = sharedPreferences.getInt("id", -1);
 
                     List<Bill> filteredBills = new ArrayList<>();
                     for (Bill bill : list) {
-                        Log.e("Bill test : ", String.valueOf(bill));
                         if (bill.getUserId() == savedUserId) {
                             filteredBills.add(bill);
                         }

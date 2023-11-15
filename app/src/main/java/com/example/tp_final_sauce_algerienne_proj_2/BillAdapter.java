@@ -33,8 +33,12 @@ public class BillAdapter extends ArrayAdapter<Bill> {
         TextView txtBillDueDate = (TextView) rowView.findViewById(R.id.txtBillDueDate);
         TextView txtBillDestination = (TextView) rowView.findViewById(R.id.txtBillDestination);
 
+        double rideAmount = bills.get(pos).getRideAmount();
+        double riderAmount = bills.get(pos).getRiderAmount();
+        double totalAmount = rideAmount + riderAmount;
+
         txtRider.setText(String.format("Rider : %s", bills.get(pos).getRider()));
-        txtBillAmount.setText(String.format("Amount : %d", bills.get(pos).getId()));
+        txtBillAmount.setText(String.format("Total Cost : %.0f", totalAmount, " Euros"));
         txtBillDueDate.setText(String.format("Date : %s", bills.get(pos).getDueDate()));
         txtBillDestination.setText(String.format("Destination : %s", bills.get(pos).getDestination()));
 
@@ -43,10 +47,12 @@ public class BillAdapter extends ArrayAdapter<Bill> {
             public void onClick(View v) {
                 Intent intent = new Intent(context, BillActivity.class);
                 intent.putExtra("rider", bills.get(pos).getRider());
-                intent.putExtra("amount", String.valueOf(bills.get(pos).getAmount()));
+                intent.putExtra("duration", String.valueOf(bills.get(pos).getDuration()));
+                intent.putExtra("riderAmount", String.valueOf(bills.get(pos).getRiderAmount()));
+                intent.putExtra("rideAmount", String.valueOf(bills.get(pos).getRideAmount()));
                 intent.putExtra("dueDate", bills.get(pos).getDueDate());
                 intent.putExtra("origin", bills.get(pos).getOrigin());
-                intent.putExtra("destination", bills.get(pos).getAmount());
+                intent.putExtra("destination", bills.get(pos).getDestination());
                 intent.putExtra("distance", String.valueOf(bills.get(pos).getDistance()));
                 context.startActivity(intent);
             }

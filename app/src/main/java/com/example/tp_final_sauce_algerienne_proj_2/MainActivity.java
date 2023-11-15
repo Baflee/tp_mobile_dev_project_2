@@ -3,6 +3,7 @@ package com.example.tp_final_sauce_algerienne_proj_2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Build;
 import android.view.View;
@@ -30,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
 
+        SharedPreferences sharedPreferences = getSharedPreferences("userSaved", MODE_PRIVATE);
+        String username = sharedPreferences.getString("name", "Mister");
 
-        // Assuming you have a user object or user data available.
-        String username = "User"; // replace this with actual user data
         TextView welcomeText = findViewById(R.id.welcomeText);
-        welcomeText.setText(String.format("%s, ready for a ride?", username));
+        welcomeText.setText(String.format("Hey %s, ready for a ride?", username));
 
         TextView dateText = findViewById(R.id.dateText);
         dateText.setText(String.format("Today is %s", DateFormat.getDateInstance().format(new Date())));
@@ -49,12 +50,28 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button commandUberButton = findViewById(R.id.commandUberButton);
-        commandUberButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RideActivity.class);
-                startActivity(intent);
-            }
+        commandUberButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, RideActivity.class);
+            startActivity(intent);
         });
+
+        Button logoutButton = (Button) findViewById(R.id.logoutButton);
+
+        logoutButton.setOnClickListener(v -> {
+            Disconnect();
+        });
+    }
+
+    private void Disconnect() {
+        SharedPreferences sharedPreferences = getSharedPreferences("userSaved", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+
+        // Start the Login Activity
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+
+        finish();
     }
 }

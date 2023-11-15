@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -16,40 +17,65 @@
             android:layout_height="192dp" />
 
         <TextView
-            android:id="@+id/txtPrice"
+            android:id="@+id/txtBillRideAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Price : 94"
+            android:text="Ride Fee"
             android:layout_marginTop="20dp"
             android:textSize="18sp"
-            android:background="@color/buttonColor"
-            android:textColor="@color/buttonTextColor"/>
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/txtBillRiderAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Service Fee"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/txtBillDistance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Distance : 50 km"
+            android:text="Distance"
             android:layout_marginTop="20dp"
             android:textSize="18sp"
-            android:background="@color/buttonColor"
-            android:textColor="@color/buttonTextColor"/>
+            android:textColor="@color/black"/>
 
-        <!-- Destination Input -->
+        <TextView
+            android:id="@+id/txtBillDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duration"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+        <!--
         <EditText
-            android:id="@+id/etDestination"
+            android:id="@+id/edtOrigin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Origin"
+            android:inputType="text"/>
+        -->
+
+        <EditText
+            android:id="@+id/edtDestination"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter destination"
             android:inputType="text"/>
 
-        <!-- Submit Button -->
         <Button
-            android:id="@+id/btnSubmit"
+            android:id="@+id/btnSubmitRide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Confirm Ride"
-            android:layout_gravity="center_horizontal"/>
+            android:backgroundTint="@color/buttonColor"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

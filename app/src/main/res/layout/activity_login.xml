@@ -14,7 +14,7 @@
         android:scaleType="fitXY"
         android:src="@drawable/login_elipse"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,19 +85,20 @@
         app:layout_constraintVertical_bias="0.643" />
 
     <Button
-            android:id="@+id/validateButton"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="700dp"
-            android:backgroundTint="@color/buttonColor"
-            android:text="Log in"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:iconTint="@color/buttonColor"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/validateButton"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="600dp"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Log in"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:iconTint="@color/buttonColor"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/signupButton"
         android:layout_width="350dp"

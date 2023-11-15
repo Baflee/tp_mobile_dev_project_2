@@ -35,7 +35,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText passwordEditText;
     private EditText nameEditText;
     private Button signupButton;
-    private Button loginButton;
     private Button validateButton;
     private boolean isLoginActive;
 
@@ -64,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //UserService
         userService = APIUtils.getUserService();
+        loginUI();
 
         signupButton.setOnClickListener(view -> {
             if (!isLoginActive) {
@@ -172,7 +172,7 @@ public class LoginActivity extends AppCompatActivity {
         myUser.putInt("id", user.getId());
         myUser.putString("email", user.getEmail());
         myUser.putString("name", user.getName());
-        // Add other user details you want to save
+
         myUser.apply();
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
@@ -197,7 +197,7 @@ public class LoginActivity extends AppCompatActivity {
                     for (User user : users) {
                         if (user.getEmail().equalsIgnoreCase(email) && BCrypt.checkpw(password, user.getPassword())) {
                             isUserFound = true;
-                            saveUserData(user); // Save user data in Shared Preferences
+                            saveUserData(user);
                             break;
                         }
                     }

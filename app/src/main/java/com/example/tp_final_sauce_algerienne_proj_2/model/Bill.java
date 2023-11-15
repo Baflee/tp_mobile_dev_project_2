@@ -16,9 +16,17 @@ public class Bill {
     @Expose
     private String rider;
 
-    @SerializedName("amount")
+    @SerializedName("rideAmount")
     @Expose
-    private double amount;
+    private double rideAmount;
+
+    @SerializedName("riderAmount")
+    @Expose
+    private double riderAmount;
+
+    @SerializedName("duration")
+    @Expose
+    private int duration;
 
     @SerializedName("dueDate")
     @Expose
@@ -35,6 +43,18 @@ public class Bill {
     @SerializedName("distance")
     @Expose
     private double distance;
+
+    public Bill(int userId, String rider, double rideAmount, double riderAmount, int duration, String dueDate, String origin, String destination, double distance) {
+        this.userId = userId;
+        this.rider = rider;
+        this.rideAmount = rideAmount;
+        this.riderAmount = riderAmount;
+        this.duration = duration;
+        this.dueDate = dueDate;
+        this.origin = origin;
+        this.destination = destination;
+        this.distance = distance;
+    }
 
     // Getter and setter for id
     public int getId() {
@@ -63,13 +83,30 @@ public class Bill {
         this.rider = rider;
     }
 
-    // Getter and setter for amount
-    public double getAmount() {
-        return amount;
+    // Getter and setter for amounts
+    public double getRiderAmount() {
+        return riderAmount;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public void setRiderAmount(double riderAmount) {
+        this.riderAmount = riderAmount;
+    }
+
+    public double getRideAmount() {
+        return rideAmount;
+    }
+
+    public void setRideAmount(double rideAmount) {
+        this.rideAmount = rideAmount;
+    }
+
+    // Getter and setter for duration
+    public double getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
     // Getter and setter for dueDate
